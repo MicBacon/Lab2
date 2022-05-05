@@ -1,0 +1,20 @@
+﻿<Window x:Class="PT_Lab8.CreationWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="CreationWindow" Height="300" Width="300">
+    <Grid>
+        <TextBlock Margin="10, 10, 0, 0">Name:</TextBlock>
+        <TextBox Name="FileInput" Margin="50, 10, 100, 230">sample-file.txt</TextBox>
+        <RadioButton Name="FileRadio" Margin="50, 50, 100, 0">File</RadioButton>
+        <RadioButton Name="DirRadio" Margin="50, 70, 100, 0">Directory</RadioButton>
+        <CheckBox Name="RCheck" Margin="50, 110, 0, 0">ReadOnly</CheckBox>
+        <CheckBox Name="ACheck" Margin="140, 110, 0, 0">Archive</CheckBox>
+        <CheckBox Name="HCheck" Margin="50, 140, 0, 0">Hidden</CheckBox>
+        <CheckBox Name="SCheck" Margin="140, 140, 0, 0">System</CheckBox>
+        <Button Margin="50, 220, 160, 20" Click="OkClicked">Ok</Button>
+        <Button Margin="160, 220, 50, 20" Click="CancelClicked">Cancel</Button>
+    </Grid>
+</Window>

@@ -1,0 +1,27 @@
+﻿<Window x:Class="PT_Lab8.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="400" Width="600">
+    <Grid>
+        <ToolBar>
+            <Menu>
+                <MenuItem Header="File">
+                    <MenuItem Header="Open" Click="OpenClicked"></MenuItem>
+                    <MenuItem Header="Exit" Click="ExitClicked"></MenuItem>
+                </MenuItem>
+            </Menu>
+        </ToolBar>
+        <TreeView Name="TreeView" Margin="15, 30, 310, 60">
+        </TreeView>
+        <ScrollViewer Margin="310, 30, 15, 60">
+            <TextBox Name="TextDisplay" IsReadOnly="true">
+            </TextBox>
+        </ScrollViewer>
+        <StatusBar Margin="15, 301, 15, 0">
+            <TextBlock Name="RahsAttributes" FontSize="25">----</TextBlock>
+        </StatusBar>
+    </Grid>
+</Window>
