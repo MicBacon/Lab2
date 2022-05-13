@@ -141,8 +141,11 @@ namespace PT_Lab8
             
             var creation = new CreationWindow(path);
             creation.ShowDialog();
-            
+
             var filePath = creation.GetFilePath();
+            
+            if(filePath == "") return;
+            
             var itemToAdd = new TreeViewItem
             {
                 Header = Path.GetFileName(filePath),
@@ -150,6 +153,38 @@ namespace PT_Lab8
             };
 
             itemToAdd.PreviewMouseDown += DisplayRahsAttributes;
+
+            var upperOption = new MenuItem();
+            var fi = new FileInfo(filePath);
+            
+            upperOption.Tag = filePath;
+
+            if ((fi.Attributes & FileAttributes.Directory) == FileAttributes.Directory)
+            {
+                upperOption.Header = "Create";
+                upperOption.Click += CreateFileClicked;
+
+            }
+            else
+            {
+                upperOption.Header = "Open";
+                upperOption.Click += OpenFileClicked;
+            }
+
+            var ncm = new ContextMenu();
+
+            var delete = new MenuItem
+            {
+                Header = "Delete",
+                Tag = filePath
+            };
+                
+            delete.Click += DeleteClicked;
+
+            ncm.Items.Add(upperOption);
+            ncm.Items.Add(delete);
+
+            itemToAdd.ContextMenu = ncm;
             
             root.Items.Add(itemToAdd);
         }
